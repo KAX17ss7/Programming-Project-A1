@@ -1,4 +1,5 @@
 ---
+name: new-page
 description: Create a new Next.js App Router page in the correct route group ((auth) or (dashboard)). Use when adding a new page to the frontend.
 argument-hint: "[page-name] [(auth)|(dashboard)]"
 ---

@@ -1,4 +1,5 @@
 ---
+name: new-component
 description: Create a typed React component (Server or Client) with Props interface. Use when adding a reusable UI component.
 argument-hint: "[ComponentName] [server|client]"
 ---

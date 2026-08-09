@@ -1,4 +1,5 @@
 ---
+name: save-session
 description: Save current session state to a file so it can be resumed in a future conversation. Use before ending a session mid-task or before a context compaction.
 argument-hint: "[session-name]"
 ---

@@ -1,4 +1,5 @@
 ---
+name: new-feature
 description: Scaffold a complete feature module under frontend/src/features/ — types, hook, Server Actions, and component. Use when building a new business domain feature.
 argument-hint: "[feature-name e.g. invoices]"
 ---

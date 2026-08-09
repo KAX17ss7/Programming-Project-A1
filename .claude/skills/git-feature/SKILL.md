@@ -1,4 +1,5 @@
 ---
+name: git-feature
 description: Create a feature branch from main and open a draft PR. Use when starting new work.
 argument-hint: "[feature-name]"
 ---

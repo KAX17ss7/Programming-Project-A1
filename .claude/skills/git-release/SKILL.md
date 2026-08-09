@@ -1,4 +1,5 @@
 ---
+name: git-release
 description: Tag the current main branch as a milestone/submission checkpoint. Use when you want to mark a point in history (e.g., before a capstone submission deadline) without a formal release process.
 argument-hint: "[version e.g. 0.1.0]"
 ---

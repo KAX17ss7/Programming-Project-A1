@@ -1,4 +1,5 @@
 ---
+name: resume-session
 description: Load a previously saved session and resume work from where it left off. Use at the start of a new conversation to restore context from a prior session.
 argument-hint: "[session-name]"
 ---

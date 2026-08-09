@@ -1,4 +1,5 @@
 ---
+name: bootstrap
 description: Full local bootstrap — from fresh clone to the app running against a real Firebase project. Checks prerequisites, installs dependencies, walks through creating a free Firebase project and filling the root .env, starts the dev server, and smoke-tests the auth round trip. Use on first setup or whenever local dev is broken.
 ---
 

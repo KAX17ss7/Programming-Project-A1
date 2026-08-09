@@ -1,4 +1,5 @@
 ---
+name: checkpoint
 description: Create or verify a checkpoint during a long implementation task. Use to mark stable milestones and compare against them later.
 argument-hint: "[create|verify|list] [checkpoint-name]"
 ---

@@ -1,4 +1,5 @@
 ---
+name: evolve-schema
 description: Safely evolve a Firestore collection schema — updates the TypeScript type, writes a migration script, updates security rules, and documents the change. Use when adding, renaming, or removing fields from an existing collection.
 argument-hint: "[CollectionName] [add|rename|remove] [fieldName]"
 ---

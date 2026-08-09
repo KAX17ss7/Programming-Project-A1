@@ -1,4 +1,5 @@
 ---
+name: add-route
 description: Add a new HTTP route to the Cloud Functions Express backend with auth middleware and unit tests. Use when adding a new API endpoint.
 argument-hint: "[METHOD /path e.g. GET /users/:id]"
 ---

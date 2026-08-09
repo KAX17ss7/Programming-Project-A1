@@ -1,4 +1,5 @@
 ---
+name: add-env-var
 description: Add an environment variable to the single root .env template, wire it through scripts/sync-env.js to the right package, and document it in docs/ENV-VARS.md. Use when a new configuration value is needed.
 argument-hint: "[VAR_NAME] [frontend|backend|both]"
 ---

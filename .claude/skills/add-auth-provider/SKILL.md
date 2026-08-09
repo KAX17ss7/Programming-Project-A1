@@ -1,4 +1,5 @@
 ---
+name: add-auth-provider
 description: Add a new OAuth provider to Firebase Authentication — updates Firebase config, creates a sign-in button component, and adds it to the login/register pages. Use when adding Google, GitHub, Apple, or other OAuth sign-in.
 argument-hint: "[provider e.g. github|apple|microsoft]"
 ---

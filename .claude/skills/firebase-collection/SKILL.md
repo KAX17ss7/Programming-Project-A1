@@ -1,4 +1,5 @@
 ---
+name: firebase-collection
 description: Add a new typed Firestore collection — creates the TypeScript type, typedCollection export, Firestore security rules, and FIRESTORE-SCHEMA.md entry. Use when adding a new collection to the data model.
 argument-hint: "[CollectionName e.g. Posts]"
 ---

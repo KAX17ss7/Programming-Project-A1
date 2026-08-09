@@ -1,4 +1,5 @@
 ---
+name: verify
 description: Run the full verification pipeline — lint, typecheck, tests, and console.log scan — and output a READY or NOT READY verdict. Use before opening a PR or after a significant implementation.
 argument-hint: "[--fix]"
 ---

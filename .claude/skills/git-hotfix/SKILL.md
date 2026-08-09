@@ -1,4 +1,5 @@
 ---
+name: git-hotfix
 description: Create a hotfix branch from main for an urgent fix. Use when something is broken and needs fixing ASAP.
 argument-hint: "[hotfix-name]"
 ---
