@@ -88,7 +88,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Daniel Granville',
     role: 'Developer',
-    studentNumber: 's4008936',
+    studentNumber: 's4004791',
     skills:
       'My skills revolve around my knowledge of coding and networking gained throughout ' +
       'university. I am able to code in a variety of languages such as assembly, C++, ' +
