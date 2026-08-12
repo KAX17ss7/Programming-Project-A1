@@ -187,6 +187,7 @@ function TeamCard({ member }: { member: TeamMember }) {
   )
 }
 
+// developed with the aid of docs/agent-chats/2026-08-12-cop.txt and docs/agent-chats/2026-08-12-cc.txt
 export default async function TeamPage() {
   await requireAuth()
 
