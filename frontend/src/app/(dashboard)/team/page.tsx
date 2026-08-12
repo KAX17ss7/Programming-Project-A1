@@ -61,7 +61,8 @@ const teamMembers: TeamMember[] = [
       "on all things other than music. More recently I've focused on large scale ISP " +
       'networking technologies and am studying for my CCNP (ENARSI). In my spare time, ' +
       'I enjoy experimenting with media broadcast technologies in my homelab.',
-    course: 'Bachelor of Computer & Network Engineering / Bachelor of Computer Science (4th year)',
+    course:
+      'Bachelor of Computer & Network Engineering / ' + 'Bachelor of Computer Science (4th year)',
   },
   {
     name: 'Jesse Lang',
@@ -83,7 +84,8 @@ const teamMembers: TeamMember[] = [
       'between disconnected systems, I began building tools to streamline and automate ' +
       'these processes. I’ve since applied the same practical, problem-focused approach ' +
       'to developing full-stack applications that address real operational needs.',
-    course: 'Bachelor of Computer & Network Engineering / Bachelor of Computer Science (4th year)',
+    course:
+      'Bachelor of Computer & Network Engineering / ' + 'Bachelor of Computer Science (4th year)',
   },
   {
     name: 'Daniel Granville',
@@ -100,14 +102,23 @@ const teamMembers: TeamMember[] = [
       'such as a coding bootcamp and learning to code a website through an activity ' +
       'book. While in university my interest has expanded to networking and ' +
       'microcontrollers as I gained experience with them through classes.',
-    course: 'Bachelor of Computer & Network Engineering / Bachelor of Computer Science (4th year)',
+    course:
+      'Bachelor of Computer & Network Engineering / ' + 'Bachelor of Computer Science (4th year)',
   },
   {
     name: 'Asbi Babu',
     role: 'UX Designer',
     studentNumber: 'S4075945',
-    skills: '',
-    background: '',
+    skills:
+      'My skills are mainly focused on cloud computing, cybersecurity and software ' +
+      'development. Through my IT studies, I have gained experience with AWS, ' +
+      'networking, security analysis and web development, along with practical ' +
+      'troubleshooting and problem-solving.',
+    background:
+      'I am currently studying a Bachelor of Information Technology and have ' +
+      'developed a strong interest in cloud computing and cybersecurity through my ' +
+      'coursework and projects. I enjoy hands-on technical work and continuing to ' +
+      'build my experience with new technologies.',
     course: 'Bachelor of Information Technology (3rd year)',
   },
   {
@@ -143,12 +154,11 @@ function TeamCard({ member }: { member: TeamMember }) {
           className="h-32 w-32 shrink-0 rounded-full bg-zinc-200 object-cover dark:bg-zinc-800"
         />
         <div>
-          <p className="font-semibold text-zinc-900 dark:text-zinc-50">{member.name}
-            
-          </p>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">{member.role}
+          <p className="font-semibold text-zinc-900 dark:text-zinc-50">{member.name}</p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            {member.role}
             <span className="text-xs text-zinc-400 dark:text-zinc-500">
-               · {member.studentNumber}
+              · {member.studentNumber}
             </span>
           </p>
           <p className="text-sm text-zinc-500 dark:text-zinc-400">{member.course}</p>
