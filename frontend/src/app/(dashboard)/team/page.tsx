@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import Image from 'next/image'
 import { requireAuth } from '@/actions/auth.actions'
 
 export const metadata: Metadata = {
@@ -8,16 +9,24 @@ export const metadata: Metadata = {
 
 interface TeamMember {
   name: string
+  role: string
+  studentNumber: string
   skills: string
   background: string
+  course: string
 }
 
-function initials(name: string): string {
-  return name
-    .split(' ')
-    .map((part) => part[0])
-    .join('')
-    .toUpperCase()
+/**
+ * Portrait photos live in `frontend/public/images/team/`, one file per
+ * member, named as the kebab-case of their full name (e.g. "Casper Shilo"
+ * -> `casper-shilo.jpg`).
+ */
+function photoSrc(name: string): string {
+  const slug = name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '')
+  return `/images/team/${slug}.jpg`
 }
 
 function renderWithBold(text: string): ReactNode {
@@ -39,6 +48,8 @@ const projectDescription =
 const teamMembers: TeamMember[] = [
   {
     name: 'Casper Shilo',
+    role: 'Project Manager',
+    studentNumber: 's4008936',
     skills:
       'The majority of my skills are related to network engineering and automation. ' +
       'I regularly use Ansible Automation Platform to automate complex and repetitive ' +
@@ -50,9 +61,12 @@ const teamMembers: TeamMember[] = [
       "on all things other than music. More recently I've focused on large scale ISP " +
       'networking technologies and am studying for my CCNP (ENARSI). In my spare time, ' +
       'I enjoy experimenting with media broadcast technologies in my homelab.',
+    course: 'Bachelor of Computer & Network Engineering / Bachelor of Computer Science (4th year)',
   },
   {
     name: 'Jesse Lang',
+    role: 'Developer',
+    studentNumber: 's4002576',
     skills:
       '**Logistics Automation:** I use end-of-day operational data to digitise ' +
       'paper-based processes, improve visibility into operational inefficiencies, and ' +
@@ -69,9 +83,12 @@ const teamMembers: TeamMember[] = [
       'between disconnected systems, I began building tools to streamline and automate ' +
       'these processes. I’ve since applied the same practical, problem-focused approach ' +
       'to developing full-stack applications that address real operational needs.',
+    course: 'Bachelor of Computer & Network Engineering / Bachelor of Computer Science (4th year)',
   },
   {
     name: 'Daniel Granville',
+    role: 'Developer',
+    studentNumber: 's4008936',
     skills:
       'My skills revolve around my knowledge of coding and networking gained throughout ' +
       'university. I am able to code in a variety of languages such as assembly, C++, ' +
@@ -83,14 +100,20 @@ const teamMembers: TeamMember[] = [
       'such as a coding bootcamp and learning to code a website through an activity ' +
       'book. While in university my interest has expanded to networking and ' +
       'microcontrollers as I gained experience with them through classes.',
+    course: 'Bachelor of Computer & Network Engineering / Bachelor of Computer Science (4th year)',
   },
   {
     name: 'Asbi Babu',
+    role: 'UX Designer',
+    studentNumber: 'S4075945',
     skills: '',
     background: '',
+    course: 'Bachelor of Information Technology (3rd year)',
   },
   {
     name: 'Bevin Chathely',
+    role: 'Business Analyst',
+    studentNumber: 'S4092723',
     skills:
       'My skills centres on Cybersecurity, IT Ticketing, and Troubleshooting/Analysis ' +
       'which are all skills that I continue to build on today through my degree and ' +
@@ -104,6 +127,7 @@ const teamMembers: TeamMember[] = [
       'computers, fix digital equipment that break, and teaching others how to securely ' +
       'use their devices have all stood out to me. This ultimately lead me down the ' +
       'path of Cybersecurity which I am now studying  and applying through work.',
+    course: 'Bachelor of Information Technology (3rd year)',
   },
 ]
 
@@ -111,10 +135,24 @@ function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
       <div className="flex items-center gap-3">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-zinc-200 text-sm font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
-          {initials(member.name)}
+        <Image
+          src={photoSrc(member.name)}
+          alt={member.name}
+          width={128}
+          height={128}
+          className="h-32 w-32 shrink-0 rounded-full bg-zinc-200 object-cover dark:bg-zinc-800"
+        />
+        <div>
+          <p className="font-semibold text-zinc-900 dark:text-zinc-50">{member.name}
+            
+          </p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">{member.role}
+            <span className="text-xs text-zinc-400 dark:text-zinc-500">
+               · {member.studentNumber}
+            </span>
+          </p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-400">{member.course}</p>
         </div>
-        <p className="font-semibold text-zinc-900 dark:text-zinc-50">{member.name}</p>
       </div>
 
       <div className="mt-4 space-y-3">
