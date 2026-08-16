@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 :root {
+  /* Tell the user agent which color scheme to use for native UI (forms, controls).
+     This enables native controls like the password-reveal icon to match light/dark mode. */
+  color-scheme: light;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -12,11 +15,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* When the system prefers dark, tell the UA to render native controls in dark mode too */
 @media (prefers-color-scheme: dark) {
   :root {
+    color-scheme: dark;
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+/* When using class-based dark mode (html.dark), also enable dark color-scheme */
+html.dark {
+  color-scheme: dark;
 }
 
 body {
